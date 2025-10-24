@@ -77,6 +77,11 @@ export default function Page() {
         setLoading(true);
         const response = await getorder(token);
         console.log(response);
+
+        if (!response.message) {
+          localStorage.removeItem("token");
+          router.push("/");
+        }
         setData(response);
       } catch (err: any) {
         if (err.name === "JWTExpired" || err.message?.includes("expired")) {
