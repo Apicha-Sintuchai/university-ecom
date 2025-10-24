@@ -78,7 +78,7 @@ export default function Page() {
         const response = await getorder(token);
         console.log(response);
 
-        if (!response.message) {
+        if (!response.status) {
           localStorage.removeItem("token");
           router.push("/");
         }
