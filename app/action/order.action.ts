@@ -99,7 +99,7 @@ export const createorder = async (Data: ordertype) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer f4f3d467-fbca-4525-80f2-dc1ad5d4ed97",
+        Authorization: `Bearer ${process.env.easyslip}`,
       },
       body: JSON.stringify({
         image: Data.base64image,
