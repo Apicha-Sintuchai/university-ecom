@@ -2,9 +2,7 @@ import mongoose from "mongoose";
 
 export const connectmongodb = async () => {
   try {
-    const connect = await mongoose.connect(
-      "mongodb://root:example@localhost:27017/project?authSource=admin",
-    );
+    const connect = await mongoose.connect(`${process.env.mongodb}`);
 
     if (!connect) {
       throw new Error(connect);
