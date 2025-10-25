@@ -62,6 +62,16 @@ export default function MyNavbar() {
               <span className="mr-2">🛒</span>
               ตะกร้า
             </Button>
+
+            <Button
+              className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              onClick={() => {
+                localStorage.removeItem("token");
+                window.location.reload();
+              }}
+            >
+              Logout
+            </Button>
           </div>
         ) : (
           <div className="flex justify-end items-center gap-4">
